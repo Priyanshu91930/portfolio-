@@ -251,7 +251,7 @@ function Page() {
                 />
               </div>
               <div className="flex flex-col gap-3 lg:items-center ml-10 md:ml-20 lg:ml-0">
-                <p className="text-center text-xl">Naresh Khatri</p>
+                <p className="text-center text-xl">Priyanshu Solanki</p>
                 <div className="text-xs bg-zinc-700 w-fit px-3 py-1 rounded-full">
                   Web Developer
                 </div>
@@ -287,7 +287,7 @@ function Page() {
           >
             <h1 className="text-3xl mb-10 lg:md-20">About me</h1>
             <p className="mb-10 text-roboto">
-              Hey there! I&apos;m Naresh, a Fullstack developer passionate about
+              Hey there! I&apos;m Priyanshu, a Fullstack developer passionate about
               creating meaningful digital experiences. With great in Web
               development, I thrive on turning ideas into reality through coding
               and design. My journey began with a fascination for technology and
