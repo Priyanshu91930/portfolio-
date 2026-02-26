@@ -321,3 +321,66 @@ export const themeDisclaimers = {
   ],
 };
 
+export type Education = {
+  id: number;
+  degree: string;
+  institution: string;
+  location: string;
+  duration: string;
+  gpa?: string;
+  coursework?: string[];
+};
+
+export const EDUCATION: Education[] = [
+  {
+    id: 1,
+    degree: "Master of Computer Applications (MCA)",
+    institution: "Graphic Era Hill University",
+    location: "Dehradun",
+    duration: "2022 - 2024",
+    gpa: "Cumulative GPA: 8.4 (Sem 2), 8.05 (Sem 3), 7.9 (Sem 1)",
+    coursework: [
+      "Data Structures",
+      "Web Development",
+      "DBMS",
+      "Operating Systems",
+    ],
+  },
+];
+
+export type Certification = {
+  id: number;
+  title: string;
+  issuer: string;
+  date?: string;
+  description?: string;
+};
+
+export const CERTIFICATIONS: Certification[] = [
+  {
+    id: 1,
+    title: "AWS Cloud Practitioner Essentials",
+    issuer: "Amazon Web Services (AWS)",
+    description: "Cloud fundamentals and AWS services",
+  },
+  {
+    id: 2,
+    title: "Developer & Technology Consultant Simulation",
+    issuer: "Accenture - Forage",
+    description: "Virtual experience program for technology consulting",
+  },
+  {
+    id: 3,
+    title: "Data Analytics Virtual Job Simulation",
+    issuer: "Deloitte - Forage",
+    description: "Hands-on data analytics and visualization experience",
+  },
+  {
+    id: 4,
+    title: "Cybersecurity Analyst Virtual Job Simulation",
+    issuer: "Tata Group (TCS) - Forage",
+    description: "Cybersecurity fundamentals and threat analysis",
+  },
+];
+
+

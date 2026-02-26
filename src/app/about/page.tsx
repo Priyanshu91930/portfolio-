@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { DiMongodb, DiNginx, DiNpm, DiPostgresql, DiVim } from "react-icons/di";
+import { EDUCATION, CERTIFICATIONS } from "@/data/constants";
 import {
   FaAws,
   FaCss3,
@@ -43,8 +44,8 @@ import { TbTerminal2 } from "react-icons/tb";
 const CONTACT_LINKS = [
   {
     name: "Email",
-    content: "naresh.khatri2345@gmail",
-    href: "mailto:naresh.khatri2345@gmail.com",
+    content: "solankipriyanshu94@gmail",
+    href: "mailto:solankipriyanshu94@gmail.com",
     icon: <FaEnvelope height={"50px"} />,
   },
   {
@@ -359,6 +360,56 @@ function Page() {
                 ))}
               </Splide>
             </div> */}
+
+            <h1 className="text-3xl mb-10 mt-20">Education</h1>
+            {EDUCATION.map((edu) => (
+              <div
+                key={edu.id}
+                className="mb-6 p-6 border-[.5px] border-zinc-600 rounded-md"
+                style={{ backdropFilter: "blur(2px)" }}
+              >
+                <h3 className="text-xl font-semibold mb-2">{edu.degree}</h3>
+                <p className="text-lg text-zinc-400 mb-1">
+                  {edu.institution}, {edu.location}
+                </p>
+                <p className="text-sm text-zinc-500 mb-3">{edu.duration}</p>
+                {edu.gpa && (
+                  <p className="text-sm text-zinc-400 mb-3">{edu.gpa}</p>
+                )}
+                {edu.coursework && edu.coursework.length > 0 && (
+                  <div>
+                    <p className="text-sm font-semibold mb-2">Relevant Coursework:</p>
+                    <div className="flex flex-wrap gap-2">
+                      {edu.coursework.map((course, idx) => (
+                        <span
+                          key={idx}
+                          className="text-xs bg-zinc-700 px-3 py-1 rounded-full"
+                        >
+                          {course}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+
+            <h1 className="text-3xl mb-10 mt-20">Certifications</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+              {CERTIFICATIONS.map((cert) => (
+                <div
+                  key={cert.id}
+                  className="p-5 border-[.5px] border-zinc-600 rounded-md hover:border-zinc-500 transition-colors"
+                  style={{ backdropFilter: "blur(2px)" }}
+                >
+                  <h3 className="text-lg font-semibold mb-2">{cert.title}</h3>
+                  <p className="text-sm text-zinc-400 mb-2">{cert.issuer}</p>
+                  {cert.description && (
+                    <p className="text-xs text-zinc-500">{cert.description}</p>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </main>
       </div>

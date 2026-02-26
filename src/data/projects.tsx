@@ -234,464 +234,327 @@ export type Project = {
   github?: string;
   live: string;
 };
+// New skill definitions needed for the projects
+const c = {
+  title: "C Programming",
+  bg: "black",
+  fg: "white",
+  icon: "C",
+};
+
+const reactNative = {
+  title: "React Native",
+  bg: "black",
+  fg: "white",
+  icon: <RiReactjsFill />,
+};
+
+const googleMaps = {
+  title: "Google Maps API",
+  bg: "black",
+  fg: "white",
+  icon: "🗺️",
+};
+
 const projects: Project[] = [
   {
-    id: "codingducks",
-    category: "Coding platform",
-    title: "Coding Ducks",
-    src: "/assets/projects-screenshots/codingducks/landing.png",
+    id: "pyq-app",
+    category: "Mobile App",
+    title: "Previous Year Board Paper App",
+    src: "/assets/projects-screenshots/pyq-app/landing.png",
     screenshots: ["landing.png"],
     skills: {
-      frontend: [
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.chakra,
-        PROJECT_SKILLS.reactQuery,
-        PROJECT_SKILLS.firebase,
-      ],
+      frontend: [reactNative],
+      backend: [PROJECT_SKILLS.firebase],
+    },
+    live: "#",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono ">
+            A comprehensive mobile application built with React Native that provides students with easy access to previous year board papers. Successfully deployed on Google Play Store.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
+          <ul className="list-disc ml-6">
+            <li className="font-mono">Access to previous year board papers</li>
+            <li className="font-mono">Firebase backend for real-time data sync</li>
+            <li className="font-mono">Deployed on Google Play Store</li>
+            <li className="font-mono">User-friendly interface for students</li>
+          </ul>
+        </div>
+      );
+    },
+  },
+  {
+    id: "cashmate",
+    category: "FinTech",
+    title: "Cashmate: Cash Sharing Platform",
+    src: "/assets/projects-screenshots/cashmate/landing.png",
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [PROJECT_SKILLS.react],
       backend: [
         PROJECT_SKILLS.node,
         PROJECT_SKILLS.express,
-        PROJECT_SKILLS.prisma,
-        PROJECT_SKILLS.python,
-        PROJECT_SKILLS.postgres,
-        PROJECT_SKILLS.sockerio,
-      ],
-    },
-    live: "https://www.codingducks.xyz/",
-    github: "https://github.com/Naresh-Khatri/Coding-Ducks",
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono text-2xl text-center">
-            Coding ducks = LeetCode + CodePen + CSS Battles
-          </TypographyP>
-          <TypographyP className="font-mono ">
-            Coding Ducks is your coding dojo — where you level up your skills,
-            battle in real-time code duels, and earn badges like a true code
-            warrior. Track your progress, flex your brain, and climb the
-            leaderboard. Ready to quack the code?
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">Problems </TypographyH3>
-          <p className="font-mono mb-2">
-            Solve coding problems similar to LeetCode, enhancing your
-            problem-solving skills across various languages.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/codingducks/problems.png`,
-              `${BASE_PATH}/codingducks/problem.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">Ducklets</TypographyH3>
-          <p className="font-mono mb-2">
-            Collaborate in real-time with others in a multiplayer coding
-            environment, just like CodePen but with a social twist.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/codingducks/ducklets.png`,
-              `${BASE_PATH}/codingducks/ducklet1.png`,
-              `${BASE_PATH}/codingducks/ducklet2.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">UI Battles </TypographyH3>
-
-          <p className="font-mono mb-2">
-            Challenge yourself to create UI components with HTML/CSS/JS, and get
-            instant feedback with an automated similarity scoring.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/codingducks/css-battles.png`,
-              `${BASE_PATH}/codingducks/css-battle.png`,
-              `${BASE_PATH}/codingducks/css-battle2.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">Contests </TypographyH3>
-          <p className="font-mono mb-2">
-            Organize or participate in coding competitions. Successfully used to
-            host three contests during college.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/codingducks/contests.png`]} />
-          <TypographyH3 className="my-4 mt-8">Playground </TypographyH3>
-          <p className="font-mono mb-2">
-            Test and execute your code instantly in my versatile online code
-            runner.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/codingducks/playground.png`]} />
-          <TypographyH3 className="my-4 mt-8">Users</TypographyH3>
-
-          <p className="font-mono mb-2">
-            Track your progress, earn badges, and climb the rankings with
-            detailed user profiles and activity tracking.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/codingducks/users.png`,
-              `${BASE_PATH}/codingducks/user.png`,
-            ]}
-          />
-        </div>
-      );
-    },
-  },
-  {
-    id: "couponluxury",
-    category: "Coupon site",
-    title: "Coupon Luxury",
-    src: "/assets/projects-screenshots/couponluxury/landing.png",
-    screenshots: ["1.png", "2.png", "3.png", "4.png", "5.png"],
-    live: "https://www.couponluxury.com/",
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.js,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.chakra,
-        PROJECT_SKILLS.vue,
-      ],
-      backend: [
-        PROJECT_SKILLS.node,
-        PROJECT_SKILLS.express,
-        PROJECT_SKILLS.prisma,
-        PROJECT_SKILLS.postgres,
-        PROJECT_SKILLS.docker,
-      ],
-    },
-    get content(): JSX.Element {
-      return (
-        <div>
-          <TypographyP className="font-mono ">
-            CouponLuxury is your go-to destination for snagging the best deals
-            without lifting a finger. Whether you&apos;re hunting for the latest
-            discounts or trying to save a buck at your favorite stores,
-            CouponLuxury&apos;s got you covered.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <p className="font-mono mb-2 mt-4">
-            As soon as you land, boom! You&apos;re greeted with the freshest
-            coupons and top-tier deals that&apos;ll make your wallet happy.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/couponluxury/landing.png`]} />
-          <TypographyH3 className="my-4 ">Stores</TypographyH3>
-          <p className="font-mono mb-2">
-            Dive into a comprehensive list of stores, each packed with exclusive
-            deals and discounts. It&apos;s like having a VIP pass to every sale
-            in town.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/couponluxury/stores.png`,
-              `${BASE_PATH}/couponluxury/store.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">Categories</TypographyH3>
-
-          <p className="font-mono mb-2">
-            Whatever you&apos;re into—fashion, tech, food—you&apos;ll find it
-            neatly organized here. No more endless scrolling; just pick a
-            category and get the best offers instantly.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/couponluxury/categories.png`]} />
-          <TypographyH3 className="my-4 mt-8">Custom CMS </TypographyH3>
-          <p className="font-mono mb-2">
-            Powered by Vue.js, this bad boy allows us to keep the content
-            dynamic and up-to-date. From flash sales to limited-time offers, my
-            CMS ensures everything&apos;s live and relevant.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/couponluxury/cms-1.png`,
-              `${BASE_PATH}/couponluxury/cms-2.png`,
-            ]}
-          />
-          <p className="font-mono mb-2 mt-5">
-            Plus, I&apos;ve sprinkled in some extra magic like personalized
-            deal recommendations, user-friendly search features, and a sleek,
-            responsive design that works like a charm on any device.
-          </p>
-          <p className="font-mono mb-2">
-            CouponLuxury isn&apos;t just a website; it&apos;s your personal deal-hunting
-            assistant, ensuring you never miss out on a bargain!
-          </p>
-          {/* <TypographyP className="my-4 mt-8">
-          <strong>Misc:</strong>
-          Hosted not one, not two, but THREE coding contests (Codemacha) during
-          college. Safe to say, Coding Ducks passed the vibe check.
-        </TypographyP>
-        <TypographyP className="my-4 mt-8">
-          <strong>Target Audience:</strong>
-          For all the novice coders out there ready to make their mark.
-        </TypographyP> */}
-        </div>
-      );
-    },
-  },
-  {
-    id: "the-booking-desk",
-    category: "Travel",
-    title: "The Booking Desk",
-    src: "/assets/projects-screenshots/the-booking-desk/landing.png",
-    screenshots: ["1.png"],
-    live: "https://thebookingdesk.com/",
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.aceternity,
-        PROJECT_SKILLS.tailwind,
-      ],
-      backend: [PROJECT_SKILLS.sanity],
-    },
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono ">
-            The Booking Desk is your ultimate travel consultation hub, designed
-            to turn your wanderlust dreams into reality. With a focus on smooth
-            and visually captivating animations, navigating the site feels like
-            a breeze—it&apos;s almost as if the destinations are calling you.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <p className="font-mono mb-2 mt-8">
-            A sleek, modern interface greets you, featuring the latest travel
-            tips, deals, and must-visit spots around the globe.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/the-booking-desk/landing.png`]} />
-          <TypographyH3 className="my-4 mt-8">Blogs</TypographyH3>
-          <p className="font-mono mb-2">
-            Dive into the curated articles written by travel experts. Whether
-            you&apos;re looking for hidden gems or travel hacks, our blog section has
-            you covered.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/the-booking-desk/blogs.png`,
-              `${BASE_PATH}/the-booking-desk/blog.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">Sanity CMS</TypographyH3>
-
-          <p className="font-mono mb-2">
-            Keeping everything fresh and up-to-date, I&apos;ve integrated Sanity CMS
-            to manage all the content with ease, ensuring you always get the
-            latest and greatest information.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/the-booking-desk/cms-1.png`,
-              `${BASE_PATH}/the-booking-desk/cms-2.png`,
-            ]}
-          />
-          <p className="font-mono mb-2 my-8">
-            With a stunning 100% score on Lighthouse, The Booking Desk isn&apos;t
-            just beautiful—it&apos;s built to perform. Whether you&apos;re planning your
-            next adventure or just daydreaming, our site delivers a top-notch
-            experience that&apos;s both informative and enjoyable.
-          </p>
-        </div>
-      );
-    },
-  },
-  {
-    id: "portfolio",
-    category: "Portfolio",
-    title: "My Portfolio",
-    src: "/assets/projects-screenshots/portfolio/landing.png",
-    screenshots: ["1.png"],
-    live: "http://nareshkhatri.vercel.app",
-    github:"https://github.com/Naresh-Khatri/Portfolio",
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.shadcn,
-        PROJECT_SKILLS.aceternity,
-        PROJECT_SKILLS.framerMotion,
-        PROJECT_SKILLS.tailwind,
-        PROJECT_SKILLS.spline,
-      ],
-      backend: [],
-    },
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono ">
-            Welcome to my digital playground, where creativity meets code in the
-            dopest way possible.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">
-            Beautiful 3D Objects{" "}
-          </TypographyH3>
-          <p className="font-mono mb-2">
-            Did you see that 3D keyboard modal? Yeah! I made that. That
-            interactive keyboard is being rendered in 3D on a webpage 🤯, and
-            pressing each keycap reveals a skill in a goofy way. It&apos;s like
-            typing, but make it art.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/portfolio/landing.png`,
-              `${BASE_PATH}/portfolio/skills.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 ">Space Theme</TypographyH3>
-          <p className="font-mono mb-2">
-            Dark background + floating particles = out-of-this-world cool.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/portfolio/navbar.png`]} />
-          <TypographyH3 className="my-4 mt-8">Projects</TypographyH3>
-
-          <p className="font-mono mb-2">
-            My top personal and freelance projects — no filler, all killer.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/portfolio/projects.png`,
-              `${BASE_PATH}/portfolio/project.png`,
-            ]}
-          />
-          <p className="font-mono mb-2 mt-8 text-center">
-            This site&apos;s not just a portfolio — it&apos;s a whole vibe.
-          </p>
-        </div>
-      );
-    },
-  },
-  {
-    id: "ghostchat",
-    category: "Anonymous chat",
-    title: "GhostChat",
-    src: "/assets/projects-screenshots/ghostchat/1.png",
-    screenshots: ["1.png", "2.png", "3.png", "4.png"],
-    live: "https://ghostchat.vercel.app",
-    github:"https://github.com/Naresh-Khatri/GhostChat",
-    skills: {
-      frontend: [PROJECT_SKILLS.js, PROJECT_SKILLS.next, PROJECT_SKILLS.chakra],
-      backend: [PROJECT_SKILLS.supabase],
-    },
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono ">
-            Ghostchat is your go-to spot for sending anonymous messages without
-            leaving a trace. Powered by Supabase, it&apos;s all about keeping things
-            low-key and secure. Whether you&apos;re sharing secrets, giving feedback,
-            or just having some fun, Ghostchat ensures your identity stays
-            hidden, while your voice is heard. Say what you want, without the
-            worry.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <SlideShow
-            images={[
-              `${BASE_PATH}/ghostchat/1.png`,
-              `${BASE_PATH}/ghostchat/2.png`,
-              `${BASE_PATH}/ghostchat/3.png`,
-              `${BASE_PATH}/ghostchat/4.png`,
-            ]}
-          />
-        </div>
-      );
-    },
-  },
-  {
-    id: "jra",
-    category: "Result analyzer",
-    title: "JNTUA Results Analyzer",
-    src: "/assets/projects-screenshots/jra/1.png",
-    screenshots: ["1.png"],
-    live: "https://naresh-khatri.github.io/JNTUA-result-analyser-spa/#/",
-    skills: {
-      frontend: [PROJECT_SKILLS.js, PROJECT_SKILLS.vue],
-      backend: [
-        PROJECT_SKILLS.node,
         PROJECT_SKILLS.mongo,
-        PROJECT_SKILLS.express,
-        PROJECT_SKILLS.docker,
       ],
     },
+    live: "#",
+    github: "https://github.com/Priyanshu91930/cashmate",
     get content() {
       return (
         <div>
           <TypographyP className="font-mono ">
-            JNTUA Results Analyzer was a revolutionary tool designed to simplify
-            and enhance the experience of accessing academic results. It served
-            as a powerful proxy between the JNTUA university results website and
-            its users, offering a range of features that made result analysis
-            faster and more efficient. Here&apos;s what made it stand out:
+            A full-stack MERN application for managing and sharing expenses among groups. Simplifies bill splitting and tracks shared expenses with ease.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
-          <SlideShow images={[`${BASE_PATH}/jra/1.png`]} />
-          <TypographyH3 className="my-4 mt-8">
-            Effortless Results Retrieval
-          </TypographyH3>
-          {/* Effortless Results Retrieval: */}
+          <TypographyH3 className="my-4 mt-8">Tech Stack</TypographyH3>
           <ul className="list-disc ml-6">
-            <li className="font-mono">
-              Search all your results using a single roll number, eliminating
-              the tedious task of sifting through thousands of rows on the
-              official site.
-            </li>
+            <li className="font-mono">MongoDB for database management</li>
+            <li className="font-mono">Express.js backend API</li>
+            <li className="font-mono">React frontend with modern UI</li>
+            <li className="font-mono">Node.js server-side logic</li>
           </ul>
-          <TypographyH3 className="my-4 mt-8">Class-Wise Results:</TypographyH3>
+        </div>
+      );
+    },
+  },
+  {
+    id: "busmate",
+    category: "Transportation",
+    title: "Busmate: Bus Tracking Platform",
+    src: "/assets/projects-screenshots/busmate/landing.png",
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [PROJECT_SKILLS.ts],
+      backend: [PROJECT_SKILLS.node, googleMaps],
+    },
+    live: "#",
+    github: "https://github.com/Priyanshu91930/busmate",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono ">
+            A real-time bus tracking platform built with TypeScript and integrated with Google Maps API. Helps students and commuters track bus locations in real-time.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Features</TypographyH3>
           <ul className="list-disc ml-6">
-            <li className="font-mono">
-              class-wise results effortlessly by entering a roll number range.
-              No more manual searches or filtering.
-            </li>
+            <li className="font-mono">Real-time bus location tracking</li>
+            <li className="font-mono">Google Maps API integration</li>
+            <li className="font-mono">Route optimization</li>
+            <li className="font-mono">Estimated arrival times</li>
           </ul>
-          <TypographyH3 className="my-4 mt-8">Faculty Features:</TypographyH3>
+        </div>
+      );
+    },
+  },
+  {
+    id: "unipath",
+    category: "Education",
+    title: "UniPath: University Path Finder",
+    src: "/assets/projects-screenshots/unipath/landing.png",
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [PROJECT_SKILLS.js, PROJECT_SKILLS.react],
+      backend: [PROJECT_SKILLS.node],
+    },
+    live: "#",
+    github: "https://github.com/Priyanshu91930/UniPath",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono ">
+            A smart university path-finding application that helps students navigate academic journeys, find relevant courses, and plan their educational roadmap efficiently.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Core Features</TypographyH3>
           <ul className="list-disc ml-6">
-            <li className="font-mono">
-              Faculty members could download batch results in Excel format,
-              making administrative tasks a breeze.
-            </li>
+            <li className="font-mono">Academic path planning and visualization</li>
+            <li className="font-mono">Course recommendation engine</li>
+            <li className="font-mono">Built with JavaScript and React</li>
+            <li className="font-mono">Intuitive UI for students</li>
           </ul>
-          <TypographyH3 className="my-4 mt-8">
-            Enhanced Data Insights:
-          </TypographyH3>
+        </div>
+      );
+    },
+  },
+  {
+    id: "travel-grid",
+    category: "Travel",
+    title: "TravelGrid: Travel Listing Platform",
+    src: "/assets/projects-screenshots/travel-grid/landing.png",
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [PROJECT_SKILLS.js],
+      backend: [PROJECT_SKILLS.node, PROJECT_SKILLS.express, PROJECT_SKILLS.mongo],
+    },
+    live: "#",
+    github: "https://github.com/Priyanshu91930/TravelGrid",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono ">
+            A full-featured travel listing and booking platform where users can discover, list, and review travel destinations. Built with a JavaScript/Node.js stack.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Features</TypographyH3>
           <ul className="list-disc ml-6">
-            <li className="font-mono">
-              Each result came with additional features including:
-              <ul className="list-disc font-mono ml-6">
-                <li>
-                  <strong>CGPA Calculations: </strong>Easily track your
-                  cumulative grade point average.
-                </li>
-                <li>
-                  <strong>Charts:</strong> Visualize your academic performance
-                  with comprehensive charts.
-                </li>
-                <li>
-                  <strong>Future Projections:</strong> Get insights into
-                  potential future outcomes based on current performance.
-                </li>
-                <li>
-                  <strong> Backlog Counts: </strong>Keep track of your backlog
-                  subjects at a glance.
-                </li>
-              </ul>
-            </li>
+            <li className="font-mono">Browse and list travel destinations</li>
+            <li className="font-mono">User reviews and ratings</li>
+            <li className="font-mono">MongoDB database for listings</li>
+            <li className="font-mono">REST API with Express.js</li>
           </ul>
-          <TypographyH3 className="my-4 mt-8">Performance:</TypographyH3>
+        </div>
+      );
+    },
+  },
+  {
+    id: "rename-bot",
+    category: "Telegram Bot",
+    title: "Rename Bot 4GB: Telegram File Renamer",
+    src: "/assets/projects-screenshots/rename-bot/landing.png",
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [],
+      backend: [PROJECT_SKILLS.python],
+    },
+    live: "#",
+    github: "https://github.com/Priyanshu91930/Rename-Bot-4GB",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono ">
+            A powerful Telegram bot that renames files up to 4GB+, supports permanent thumbnail embedding, metadata modification, and can convert files into video format — all via Telegram.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Features</TypographyH3>
           <ul className="list-disc ml-6">
-            <li className="font-mono">
-              The application was significantly faster and more efficient than
-              the official site, providing a smoother user experience.
-            </li>
+            <li className="font-mono">Supports files up to 4GB and beyond</li>
+            <li className="font-mono">Permanent thumbnail support</li>
+            <li className="font-mono">Metadata modification capabilities</li>
+            <li className="font-mono">File-to-video conversion</li>
           </ul>
-          <TypographyH3 className="my-4 mt-8">Downfall:</TypographyH3>
+        </div>
+      );
+    },
+  },
+  {
+    id: "file-to-link",
+    category: "Telegram Bot",
+    title: "FileToLink: Fastest Telegram File Bot",
+    src: "/assets/projects-screenshots/file-to-link/landing.png",
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [],
+      backend: [PROJECT_SKILLS.python],
+    },
+    live: "#",
+    github: "https://github.com/Priyanshu91930/FileToLink",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono ">
+            The fastest Telegram File-to-Link bot built on the Kurigram platform. Instantly generates direct download links for any Telegram file, enabling seamless file sharing.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Highlights</TypographyH3>
           <ul className="list-disc ml-6">
-            <li className="font-mono">
-              Unfortunately, as of May 2022, the tool stopped working due to the
-              introduction of CAPTCHA on the official JNTUA results site, which
-              disrupted the seamless functionality of the app. JNTUA Results
-              Analyzer transformed the way students and faculty interacted with
-              academic results, making it a must-have tool until its unexpected
-              shutdown.
-            </li>
+            <li className="font-mono">Instant direct link generation</li>
+            <li className="font-mono">Built on the Kurigram platform</li>
+            <li className="font-mono">Handles large Telegram files efficiently</li>
+            <li className="font-mono">Simple bot command interface</li>
+          </ul>
+        </div>
+      );
+    },
+  },
+  {
+    id: "mirror-leech-bot",
+    category: "Telegram Bot",
+    title: "Mirror Leech Bot: Advanced Downloader",
+    src: "/assets/projects-screenshots/mirror-leech-bot/landing.png",
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [],
+      backend: [PROJECT_SKILLS.python, PROJECT_SKILLS.docker],
+    },
+    live: "#",
+    github: "https://github.com/Priyanshu91930/mirror-leech-telegram-bot",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono ">
+            A feature-rich Telegram bot that can download direct links, torrents, NZBs, Google Drive files, Telegram documents, and content from any yt-dlp supported site, then mirror or leech them to cloud storage.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Capabilities</TypographyH3>
+          <ul className="list-disc ml-6">
+            <li className="font-mono">Supports torrents, direct links, NZBs & more</li>
+            <li className="font-mono">Google Drive and rclone cloud integration</li>
+            <li className="font-mono">yt-dlp for media site downloads</li>
+            <li className="font-mono">Dockerized for easy deployment</li>
+          </ul>
+        </div>
+      );
+    },
+  },
+  {
+    id: "classroom-scheduler",
+    category: "Education",
+    title: "C Based Classroom Scheduler",
+    src: "/assets/projects-screenshots/classroom-scheduler/landing.png",
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [],
+      backend: [c],
+    },
+    live: "#",
+    github: "https://github.com/Priyanshu91930/C-based-classroom-scheduller",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono ">
+            A command-line application built with C Programming that efficiently schedules classroom assignments using advanced data structures and algorithms.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Technical Highlights</TypographyH3>
+          <ul className="list-disc ml-6">
+            <li className="font-mono">Efficient scheduling algorithms</li>
+            <li className="font-mono">Advanced data structures implementation</li>
+            <li className="font-mono">Conflict resolution system</li>
+            <li className="font-mono">Resource optimization</li>
+          </ul>
+        </div>
+      );
+    },
+  },
+  {
+    id: "college-hackathon",
+    category: "Event Website",
+    title: "College Hackathon Website",
+    src: "/assets/projects-screenshots/college-hackathon/landing.png",
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.tailwind],
+      backend: [PROJECT_SKILLS.firebase],
+    },
+    live: "#",
+    github: "https://github.com/Priyanshu91930/hackathonn",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono ">
+            A fully responsive website built with ReactJS and Firebase for hosting college hackathon events. Features modern design and seamless user experience for participants and organizers.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Features</TypographyH3>
+          <ul className="list-disc ml-6">
+            <li className="font-mono">Responsive design for all devices</li>
+            <li className="font-mono">Firebase backend integration</li>
+            <li className="font-mono">Event registration system</li>
+            <li className="font-mono">Team management functionality</li>
           </ul>
         </div>
       );

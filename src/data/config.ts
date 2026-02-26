@@ -24,7 +24,7 @@ const config = {
     "Framer Motion",
   ],
   author: "Priyanshu Solanki",
-  email: "naresh.khatri2345@gmail.com",
+  email: "solankipriyanshu94@gmail.com",
   site: "https://nareshkhatri.site",
 
   // for github stars button
@@ -37,7 +37,7 @@ const config = {
   social: {
     twitter: "https://x.com/nothotchaddi",
     linkedin: "https://www.linkedin.com/in/priyanshu-solanki-625b81301/",
-    instagram: "https://www.instagram.com/hotchaddi",
+    instagram: "https://www.instagram.com/priyanshusolanki.20/",
     facebook: "https://www.facebook.com/HotChaddi/",
     github: "https://github.com/Priyanshu91930",
   },

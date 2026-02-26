@@ -83,7 +83,7 @@ const HeroSection = () => {
               <div className="mt-8 flex flex-col gap-3 w-fit">
                 <Link
                   href={
-                    "https://drive.google.com/file/d/1pfF3QXCyzS9m5jS9BJ7vWLevirW3FFCI/view?usp=drive_link"
+                    "https://drive.google.com/file/d/1pnwiVj6siV-OJONsww8uVPxFUYjKDJXx/view?usp=drive_link"
                   }
                   target="_blank"
                   className="flex-1"
@@ -112,14 +112,6 @@ const HeroSection = () => {
                     </TooltipContent>
                   </Tooltip>
                   <div className="flex items-center h-full gap-2">
-                    <Link
-                      href={config.social.twitter}
-                      target="_blank"
-                    >
-                      <Button variant={"outline"}>
-                        <SiX size={24} />
-                      </Button>
-                    </Link>
                     <Link
                       href={config.social.github}
                       target="_blank"
