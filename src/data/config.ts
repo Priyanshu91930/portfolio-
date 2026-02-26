@@ -1,9 +1,9 @@
 const config = {
   title: "Priyanshu Solanki | Full-Stack Developer",
   description: {
-    long: "Explore the portfolio of Priyanshu, a full-stack developer and creative technologist specializing in interactive web experiences, 3D animations, and innovative projects. Discover my latest work, including Coding Ducks, The Booking Desk, Ghostchat, and more. Let's build something amazing together!",
+    long: "Explore the portfolio of Priyanshu Solanki, a full-stack developer specializing in mobile apps, web applications, and automation bots. Discover my latest work including Busmate, Cashmate, UniPath, and more. Let's build something amazing together!",
     short:
-      "Discover the portfolio of Priyanshu, a full-stack developer creating interactive web experiences and innovative projects.",
+      "Discover the portfolio of Priyanshu Solanki, a full-stack developer creating mobile apps, web apps, and powerful automation bots.",
   },
   keywords: [
     "Priyanshu",
@@ -13,9 +13,9 @@ const config = {
     "web development",
     "3D animations",
     "interactive websites",
-    "Coding Ducks",
-    "The Booking Desk",
-    "Ghostchat",
+    "Busmate",
+    "Cashmate",
+    "UniPath",
     "web design",
     "GSAP",
     "React",
@@ -25,7 +25,7 @@ const config = {
   ],
   author: "Priyanshu Solanki",
   email: "solankipriyanshu94@gmail.com",
-  site: "https://nareshkhatri.site",
+  site: "https://priyanshu91930.github.io/portfolio-",
 
   // for github stars button
   githubUsername: "Priyanshu91930",
@@ -35,10 +35,10 @@ const config = {
     return this.site + "/assets/seo/og-image.png";
   },
   social: {
-    twitter: "https://x.com/nothotchaddi",
+    twitter: "",
     linkedin: "https://www.linkedin.com/in/priyanshu-solanki-625b81301/",
     instagram: "https://www.instagram.com/priyanshusolanki.20/",
-    facebook: "https://www.facebook.com/HotChaddi/",
+    facebook: "",
     github: "https://github.com/Priyanshu91930",
   },
 };

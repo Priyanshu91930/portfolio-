@@ -56,14 +56,14 @@ const CONTACT_LINKS = [
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/naresh-khatri/",
-    content: "/naresh-khatri",
+    href: "https://www.linkedin.com/in/priyanshu-solanki-625b81301/",
+    content: "/priyanshu-solanki",
     icon: <FaLinkedin height={"50px"} />,
   },
   {
     name: "GitHub",
-    href: "https://github.com/Naresh-Khatri",
-    content: "/naresh-khatri",
+    href: "https://github.com/Priyanshu91930",
+    content: "/Priyanshu91930",
     icon: <FaGithub height={"50px"} />,
   },
 ];
