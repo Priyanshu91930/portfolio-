@@ -11,7 +11,7 @@ import {
 import { usePreloader } from "../preloader";
 import { BlurIn, BoxReveal } from "../reveal-animations";
 import ScrollDownIcon from "../scroll-down-icon";
-import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
+import { SiGithub, SiLinkedin, SiWhatsapp } from "react-icons/si";
 import { config } from "@/data/config";
 
 import SectionWrapper from "../ui/section-wrapper";
@@ -98,7 +98,7 @@ const HeroSection = () => {
                 <div className="md:self-start flex gap-3">
                   <Tooltip delayDuration={300}>
                     <TooltipTrigger asChild>
-                      <Link href={"#contact"}>
+                      <Link href={"tel:9193345928"}>
                         <Button
                           variant={"outline"}
                           className="block w-full overflow-hidden"
@@ -111,6 +111,15 @@ const HeroSection = () => {
                       <p>pls 🥹 🙏</p>
                     </TooltipContent>
                   </Tooltip>
+                  <Link
+                    href={"https://wa.me/919193345928"}
+                    target="_blank"
+                    className="cursor-can-hover"
+                  >
+                    <Button variant={"outline"} className="flex items-center gap-2">
+                      <SiWhatsapp size={20} className="text-green-500" />
+                    </Button>
+                  </Link>
                   <div className="flex items-center h-full gap-2">
                     <Link
                       href={config.social.github}
